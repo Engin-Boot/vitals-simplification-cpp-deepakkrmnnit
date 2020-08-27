@@ -13,7 +13,7 @@ bool spo2IsOk(float spo2)
 }
 bool respRateIsOk(float respRate)
 {
-       return (bpm>respRatelimits[0] && respRate<bpmlimits[1]);  
+       return (respRate>respRatelimits[0] && respRate<bpmlimits[1]);  
 }
 
 
