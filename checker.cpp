@@ -22,7 +22,7 @@ bool bpmOk(float value, int lower, int upper)
 }
 bool spo2Ok(float value, int lower)
 {
-       return ((value>=lower)&& (value<=upper));
+       return (value>=lower);
 }
 bool respRateOk(float value, int lower, int upper)
 {
