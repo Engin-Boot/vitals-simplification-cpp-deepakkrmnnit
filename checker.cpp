@@ -30,7 +30,7 @@ bool respRateIsOk(float respRate,int lower, int upper)
 {
        respRatelimits[0]=lower;
        respRatelimits[1]=upper;
-       if(respRate>respRatelimits[0] && respRate<respRateimits[1])
+       if(respRate>respRatelimits[0] && respRate<respRatelimits[1])
        {
        respRatelimits[0]=30;
        respRatelimits[1]=95;
