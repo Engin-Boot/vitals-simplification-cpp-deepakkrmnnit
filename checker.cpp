@@ -16,7 +16,15 @@ bool respRateIsOk(float respRate)
        return (respRate>respRatelimits[0] && respRate<bpmlimits[1]);  
 }
 
-bool vitalIsOk(float value, int lower, int upper)
+bool bpmOk(float value, int lower, int upper)
+{
+       return ((value>=lower)&& (value<=upper));
+}
+bool spo2Ok(float value, int lower)
+{
+       return ((value>=lower)&& (value<=upper));
+}
+bool respRateOk(float value, int lower, int upper)
 {
        return ((value>=lower)&& (value<=upper));
 }
@@ -25,9 +33,15 @@ bool vitalsAreOk(float bpm, float spo2, float respRate) {
 }
 
 int main() {
-  assert(vitalIsOk(4, 3, 7) == true);
-  assert(vitalIsOk(70, 10, 20) == false);
-  assert(vitalIsOk(5, 10, 20) == false);
+  assert(bpmOk(4, 3, 7) == true);
+  assert(bpmOk(70, 10, 20) == false);
+  assert(bpmOk(5, 10, 20) == false);
+  assert(spo2Ok(100,95) == true);
+  assert(spo2Ok(20,10) == false);
+  assert(spo2Ok(120,100) == false);
+  assert(respRateOk(40, 30, 70) == true);
+  assert(respRateOk(7, 1, 2) == false);
+  assert(respRateOk(50, 100, 120) == false);
   assert(vitalsAreOk(80, 95, 60) == true);
   assert(vitalsAreOk(60, 90, 40) == false);
 }
