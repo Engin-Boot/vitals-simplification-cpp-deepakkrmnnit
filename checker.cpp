@@ -13,6 +13,8 @@ bool bpmIsOk(float bpm,int lower,int upper)
        bpmlimits[1]=150;
        return true;
        }
+       bpmlimits[0]=70;
+       bpmlimits[1]=150;
        return false;
 }
 bool spo2IsOk(float spo2,int lower)
@@ -23,6 +25,7 @@ bool spo2IsOk(float spo2,int lower)
        spo2limits[0]=90;
               return true;
        }
+       spo2limits[0]=90;
        return false;
               
 }
@@ -36,6 +39,8 @@ bool respRateIsOk(float respRate,int lower, int upper)
        respRatelimits[1]=95;
         return true;
        }
+       respRatelimits[0]=30;
+       respRatelimits[1]=95;
        return false;
 }
 
