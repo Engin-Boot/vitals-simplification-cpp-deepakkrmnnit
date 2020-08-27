@@ -8,7 +8,7 @@ bool bpmIsOk(fload bpm)
 }
 bool spo2IsOk(fload spo2)
 {
-       return (spo2<spo2limits[0]);  
+       return (spo2>spo2limits[0]);  
 }
 bool respRateIsOk(fload respRate)
 {
