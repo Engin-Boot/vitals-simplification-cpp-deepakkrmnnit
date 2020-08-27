@@ -1,16 +1,17 @@
+#include<iostream>
 #include <assert.h>
 const int bpmlimits[]={70,150};
 const int spo2limits[]={90};
 const int respRatelimits[]={30,95};
-bool bpmIsOk(fload bpm)
+bool bpmIsOk(float bpm)
 {
        return (bpm>bpmlimits[0] && bpm<bpmlimits[1]);  
 }
-bool spo2IsOk(fload spo2)
+bool spo2IsOk(float spo2)
 {
        return (spo2>spo2limits[0]);  
 }
-bool respRateIsOk(fload respRate)
+bool respRateIsOk(float respRate)
 {
        return (bpm>respRatelimits[0] && respRate<bpmlimits[1]);  
 }
