@@ -1,8 +1,8 @@
 #include<iostream>
 #include <assert.h>
-const int bpmlimits[]={70,150};
-const int spo2limits[]={90};
-const int respRatelimits[]={30,95};
+int bpmlimits[]={70,150};
+int spo2limits[]={90};
+int respRatelimits[]={30,95};
 bool bpmIsOk(float bpm,int lower,int upper)
 {
        bpmlimits[0]=lower;
