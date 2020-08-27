@@ -37,8 +37,8 @@ int main() {
   assert(bpmOk(70, 10, 20) == false);
   assert(bpmOk(5, 10, 20) == false);
   assert(spo2Ok(100,95) == true);
-  assert(spo2Ok(20,10) == false);
-  assert(spo2Ok(120,100) == false);
+  assert(spo2Ok(5,10) == false);
+  assert(spo2Ok(120,100) == true);
   assert(respRateOk(40, 30, 70) == true);
   assert(respRateOk(7, 1, 2) == false);
   assert(respRateOk(50, 100, 120) == false);
