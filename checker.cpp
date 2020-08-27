@@ -1,14 +1,26 @@
 #include <assert.h>
+const int bpmlimits[]={70,150};
+const int spo2limits[]={90};
+const int respRatelimits[]={30,95};
+bool bpmIsOk(fload bpm)
+{
+       return (bpm>bpmlimits[0] && bpm<bpmlimits[1]);  
+}
+bool spo2IsOk(fload spo2)
+{
+       return (spo2<spo2limits[0]);  
+}
+bool respRateIsOk(fload respRate)
+{
+       return (bpm>respRatelimits[0] && respRate<bpmlimits[1]);  
+}
+
 
 bool vitalsAreOk(float bpm, float spo2, float respRate) {
-  if(bpm < 70 || bpm > 150) {
-    return false;
-  } else if(spo2 < 90) {
-    return false;
-  } else if(respRate < 30 || respRate > 95) {
-    return false;
+  if(bpmIsOk(bpm) && spo2IsOk(spo2) && respRateIsOk(respRate)) {
+    return true;
   }
-  return true;
+  return false;
 }
 
 int main() {
