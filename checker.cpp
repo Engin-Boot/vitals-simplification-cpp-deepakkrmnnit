@@ -3,19 +3,25 @@
 const int bpmlimits[]={70,150};
 const int spo2limits[]={90};
 const int respRatelimits[]={30,95};
-class AlertInSms
+class alert
+{
+      public:
+      	virtual void SendAlert(char* vitalName, char* message)=0;
+	
+};
+class AlertInSms:public alert
 {
        public:
-         void SendAlert(char* vitalName, char* message)
+         void SendAlert(char* vitalName, char* message) override
          {
                 std::cout<<vitalName<<" "<<message<<std::endl;
                 std::cout<<"sms sent"<<std::endl;
          }
 };
-class AlertInSound
+class AlertInSound:public alert
 {
        public:
-         void SendAlert(char* vitalName,char* message)
+         void SendAlert(char* vitalName,char* message) override
          {
                 std::cout<<vitalName<<" "<<message<<std::endl;
                 std::cout<<"Alertsound"<<std::endl;
