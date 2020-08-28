@@ -3,17 +3,59 @@
 const int bpmlimits[]={70,150};
 const int spo2limits[]={90};
 const int respRatelimits[]={30,95};
+class AlertInSms
+{
+       public:
+         void SendAlert(char* vitalName, char* message)
+         {
+                std::cout<<vitalName<<" "<<message<<std::endl;
+                std::cout<<"sms sent"<<std::endl;
+         }
+};
+class AlertInSound
+{
+       public:
+         void SendAlert(char* vitalName,char* message)
+         {
+                std::cout<<vitalName<<" "<<message<<std::endl;
+                std::cout<<"Alertsound"<<std::endl;
+         }
+};
 bool bpmIsOk(float bpm,int lower,int upper)
 {
-       return (bpm>lower && bpm<upper);
+       if(bpm>lower && bpm<upper)
+       {
+              return true;
+       }
+       AlertInSms a;
+       AlertInSound b;
+	    a.SendAlert("bpm","is not ok");
+	    b.SendAlert("bpm","is not ok");
+       return false;
 }
 bool spo2IsOk(float spo2,int lower)
 {
-       return (spo2>lower);
+       if(spo2>lower)
+       {
+              return true;
+       }
+       AlertInSms a;
+       AlertInSound b;
+	   a.SendAlert("spo2","is not ok");
+	   b.SendAlert("spo2","is not ok");
+       return false;
 }
 bool respRateIsOk(float respRate,int lower, int upper)
 {
-       return (respRate>lower && respRate<upper);
+       if(respRate>lower && respRate<upper)
+       {
+              return true;
+       }
+       AlertInSms a;
+      AlertInSound b;
+	   a.SendAlert("resprate","is not ok");
+	   b.SendAlert("resprate","is not ok");
+       return false;
 }
 
 
