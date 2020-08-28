@@ -9,29 +9,11 @@ bool bpmIsOk(float bpm,int lower,int upper)
 }
 bool spo2IsOk(float spo2,int lower)
 {
-       spo2limits[0]=lower;
-       if(spo2>spo2limits[0])
-       {
-       spo2limits[0]=90;
-              return true;
-       }
-       spo2limits[0]=90;
-       return false;
-              
+       return (spo2>lower);
 }
 bool respRateIsOk(float respRate,int lower, int upper)
 {
-       respRatelimits[0]=lower;
-       respRatelimits[1]=upper;
-       if(respRate>respRatelimits[0] && respRate<respRatelimits[1])
-       {
-       respRatelimits[0]=30;
-       respRatelimits[1]=95;
-        return true;
-       }
-       respRatelimits[0]=30;
-       respRatelimits[1]=95;
-       return false;
+       return (respRate>lower && respRate<upper);
 }
 
 
