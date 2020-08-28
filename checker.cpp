@@ -5,17 +5,7 @@ int spo2limits[]={90};
 int respRatelimits[]={30,95};
 bool bpmIsOk(float bpm,int lower,int upper)
 {
-       bpmlimits[0]=lower;
-       bpmlimits[1]=upper;
-       if(bpm>bpmlimits[0] && bpm<bpmlimits[1]) 
-       {
-       bpmlimits[0]=70;
-       bpmlimits[1]=150;
-       return true;
-       }
-       bpmlimits[0]=70;
-       bpmlimits[1]=150;
-       return false;
+       return (bpm>lower && bpm<upper);
 }
 bool spo2IsOk(float spo2,int lower)
 {
